@@ -6,7 +6,9 @@ export default function Sidebar() {
       <h2 className="text-xl font-bold mb-8 text-blue-400">EvalPortal AI</h2>
       <nav className="flex flex-col gap-4">
         <Link href="/" className="hover:text-blue-300 transition">Dashboard</Link>
+        <Link href="/courses" className="hover:text-blue-300 transition">Courses</Link>
         <Link href="/exams" className="hover:text-blue-300 transition">Exams</Link>
+        <Link href="/students" className="hover:text-blue-300 transition">All Students</Link>
       </nav>
     </aside>
   );
