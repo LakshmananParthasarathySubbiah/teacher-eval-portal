@@ -12,7 +12,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function StudentsPage() {
   const searchParams = useSearchParams();
-  const courseId = searchParams.get("courseId");
+  const [courseId, setCourseId] = useState<string | null>(null);
   
   const [students, setStudents] = useState<Student[]>(initialStudents);
   const [answerScripts, setAnswerScripts] = useState<AnswerScript[]>(initialAnswerScripts);
@@ -21,6 +21,11 @@ export default function StudentsPage() {
   const [uploadingStudent, setUploadingStudent] = useState<Student | null>(null);
 
   // Filter students by course
+
+  useEffect(() => {
+  setCourseId(searchParams.get("courseId"));
+}, [searchParams]);
+
   useEffect(() => {
     if (courseId) {
       setFilteredStudents(students.filter(s => s.courseId === courseId));
