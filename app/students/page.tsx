@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useState, useEffect } from "react";
 import { students as initialStudents, answerScripts as initialAnswerScripts } from "@/data/mockData";
 import { Student, AnswerScript } from "@/types";
